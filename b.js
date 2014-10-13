@@ -1,0 +1,1 @@
+try { console.log('b'); } catch(err) {}
