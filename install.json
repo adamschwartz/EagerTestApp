@@ -1,0 +1,55 @@
+{
+  "resources": {
+    "head": [
+      {
+        "type": "style",
+        "src": "./{{ options.cssFile }}.css"
+      },
+      {
+        "type": "script",
+        "src": "./a.js",
+        "if": "options.javascriptFiles.a"
+      },
+      {
+        "type": "script",
+        "src": "./b.js",
+        "if": "options.javascriptFiles.b"
+      }
+    ]
+  },
+  "options": {
+    "properties": {
+      "cssFile": {
+        "title": "CSS file",
+        "description": "Makes a CSS file to change the background to use a specific color.",
+        "type": "string",
+        "enum": [
+          "red",
+          "blue"
+        ],
+        "enumNames": {
+          "red": "Red",
+          "blue": "Blue"
+        },
+        "default": "red"
+      },
+      "javascriptFiles": {
+        "title": "JavaScript file",
+        "description": "Includes a JS file which console.logs the file name. (Check as many as you’d like.)",
+        "type": "object",
+        "properties": {
+          "a": {
+            "title": "a.js",
+            "type": "boolean",
+            "default": true
+          },
+          "b": {
+            "title": "b.js",
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    }
+  }
+}
